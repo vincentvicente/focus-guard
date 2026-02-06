@@ -41,7 +41,7 @@
 
 1. Clone or download this repository
    ```bash
-   git clone https://github.com/yourusername/focus-guard.git
+   git clone https://github.com/vincentvicente/focus-guard.git
    cd focus-guard
    ```
 
@@ -269,8 +269,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📮 Contact
 
-- Issues: [GitHub Issues](https://github.com/yourusername/focus-guard/issues)
-- Discussions: [GitHub Discussions](https://github.com/yourusername/focus-guard/discussions)
+- Issues: [GitHub Issues](https://github.com/vincentvicente/focus-guard/issues)
+- Discussions: [GitHub Discussions](https://github.com/vincentvicente/focus-guard/discussions)
 
 ---
 
