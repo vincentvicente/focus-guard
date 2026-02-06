@@ -1,0 +1,161 @@
+/* Focus Guard - Distraction Overlay */
+
+#focus-guard-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483647 !important;
+  background: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+#focus-guard-overlay.fg-visible {
+  opacity: 1 !important;
+}
+
+.fg-overlay-content {
+  text-align: center !important;
+  padding: 48px !important;
+  max-width: 480px !important;
+  animation: fg-slideUp 0.4s ease !important;
+}
+
+@keyframes fg-slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fg-warning-icon {
+  font-size: 64px !important;
+  margin-bottom: 16px !important;
+  animation: fg-shake 0.5s ease 0.3s !important;
+}
+
+@keyframes fg-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-10px); }
+  80% { transform: translateX(10px); }
+}
+
+.fg-title {
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 0 12px 0 !important;
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.fg-subtitle {
+  font-size: 18px !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  margin: 0 0 32px 0 !important;
+}
+
+.fg-time {
+  font-weight: 600 !important;
+  color: #06b6d4 !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+.fg-actions {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  align-items: center !important;
+}
+
+.fg-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 16px 32px !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  text-decoration: none !important;
+}
+
+.fg-btn-primary {
+  background: linear-gradient(135deg, #a855f7 0%, #06b6d4 50%, #ec4899 100%) !important;
+  color: white !important;
+  box-shadow: 0 4px 24px rgba(168, 85, 247, 0.4) !important;
+}
+
+.fg-btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 32px rgba(168, 85, 247, 0.5) !important;
+}
+
+.fg-btn-primary:active {
+  transform: translateY(0) !important;
+}
+
+.fg-secondary-actions {
+  display: flex !important;
+  gap: 12px !important;
+}
+
+.fg-btn-secondary {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  padding: 12px 20px !important;
+  font-size: 14px !important;
+}
+
+.fg-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.fg-distraction-count {
+  margin-top: 32px !important;
+  font-size: 13px !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .fg-overlay-content {
+    padding: 32px 24px !important;
+  }
+  
+  .fg-title {
+    font-size: 28px !important;
+  }
+  
+  .fg-subtitle {
+    font-size: 16px !important;
+  }
+  
+  .fg-secondary-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  
+  .fg-btn-secondary {
+    width: 100% !important;
+  }
+}

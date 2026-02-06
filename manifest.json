@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Guard",
+  "version": "1.1.1",
+  "description": "专注守护者 - 帮助你保持专注，远离分心",
+  "icons": {
+    "16": "assets/icon-16.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icon-16.png",
+      "48": "assets/icon-48.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "alarms",
+    "notifications",
+    "scripting",
+    "tts"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "incognito": "spanning",
+  "web_accessible_resources": [
+    {
+      "resources": ["content/overlay.css", "assets/alert.mp3"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
